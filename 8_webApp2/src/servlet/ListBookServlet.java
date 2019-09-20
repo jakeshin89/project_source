@@ -28,10 +28,10 @@ public class ListBookServlet extends HttpServlet {
 
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
-		
+/*		
 		HttpSession session = request.getSession();
 		String login = (String)session.getAttribute("login");
-/*		
+		
 		if(login == null) {
 			request.setAttribute("msg", "정보를 이용하기 위해서 로그인이 필요합니다.");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -46,13 +46,19 @@ public class ListBookServlet extends HttpServlet {
 		BookService service = new BookServiceImpl(dao);
 
 		List<BookVO> list = service.bookList();
+		//결국 service를 부르는 건, service에 있는 메소드를 부르는 것.
+		//이 메소드는 이 메소드 내 저장된 sql을 부르는 것.
+		//sql문을 부르는 건 database에 저장된 sql문을 부르는 것.
+		//getBookRec() 여기에서 sql문에서 나온 data를 다 뿌려줘서 뽑고싶은 column선택해서 list형태로 저장
+		//크 이렇게 하면 저장됨
 
 		System.out.println("listBook "+list);
-		request.setAttribute("booklist", list);
-		String view = "/booklist_after.jsp";
+		request.setAttribute("booklist", list); //위 변수list를 booklist라는 이름으로 저장
+		String view = "/booklist_after.jsp";	//보낼 페이지 입력
+		//이제는 받아서 뿌려주자
 		
 		getServletContext().getRequestDispatcher(view).forward(request, response);
-			
+		//이건 찾아보자. 무튼 보내는거
 /*	
 		//list data 꺼내서 table로 출력해주는 문장이 있어야 함
 		PrintWriter out = response.getWriter();

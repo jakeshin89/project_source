@@ -49,7 +49,9 @@ function f1(){
 			<th><input type="submit" id="del" name="del" value="삭제" onclick="return f1()"/></th>
 			<!-- return값 붙이고 안 붙이고가 달라짐 -->
 		</tr>
-		
+	
+<!-- ListBookServlet.java 에서 request.setAttribute("booklist", list); 에서 넘어온 애 출력-->
+<!-- 이게 배열 형태로 들어있으니 for loop를 돌려서 꺼내보자 -->
 	<c:forEach var="data" items="${booklist}">
 	   <tr> 
 	        <td> ${data.bookid} </td>
