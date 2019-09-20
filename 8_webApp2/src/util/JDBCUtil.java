@@ -56,3 +56,10 @@ public class JDBCUtil {
 //이렇게 해 두면 txt파일만 관리하면 돼.
 //커넥션 풀?
 //커넥트 계속 유지할 수 없으니 row mapping
+
+/* dbinfo.txt
+driver=oracle.jdbc.OracleDriver
+url=jdbc:oracle:thin:@127.0.0.1:1521:xe
+user=scott
+pw=TIGER
+*/

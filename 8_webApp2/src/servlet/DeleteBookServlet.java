@@ -25,8 +25,9 @@ public class DeleteBookServlet extends HttpServlet {
 		
 		//String bookid = request.getParameter("bookid");
 		String[] bookid = request.getParameterValues("bookid");
-		String img = request.getParameter("img");
-		String fname = img.substring(img.lastIndexOf('/')+1);
+		String img = request.getParameter("img"); //param name img가 어떻게 들어올까?
+		System.out.println(img);
+		String fname = img.substring(img.lastIndexOf('/')+1); //substring(숫자:index숫자부터시작) 그래야 온전한 파일명이 나옴
 		String path = request.getRealPath("/upload/");
 		
 		File f = new java.io.File(path+fname);

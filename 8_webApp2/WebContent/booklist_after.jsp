@@ -60,6 +60,7 @@ function f1(){
 	        <td> <input type="checkbox" name="bookid" value="${data.bookid}"/> </td>
 	   </tr>
 	   		<input type="hidden" name="img" value="${data.img}"/>
+			<!-- input data hidden은 submit해서 정보를 제출하긴 하는데 중요한 정보를 보낼 때 숨겨서 보냄 -->
 	</c:forEach>
 	</table>
 </form>
